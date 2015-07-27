@@ -11,8 +11,8 @@
 
   Asteroids.Util.inherits(Asteroids.Asteroid, Asteroids.MovingObject);
 
-  Asteroid.VECTOR_LENGTH = 5;
+  Asteroid.VECTOR_LENGTH = 10;
   Asteroid.COLOR = "#000000";
-  Asteroid.RADIUS = 10;
+  Asteroid.RADIUS = 50;
 
 })();

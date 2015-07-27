@@ -9,9 +9,9 @@
   GameView.prototype.start = function () {
     var that = this;
     setInterval(function(){
-      that.game.moveObjects();
+      that.game.step();
       that.game.draw(that.ctx);
-    }, 16);
+    }, 60);
   };
 
 })();
