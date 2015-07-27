@@ -1,19 +1,18 @@
 (function(){
-  var MovingObject = window.MovingObject = window.MovingObject || {};
-  function Asteroid(options) {
-    options.color = this.COLOR;
-    options.radius = this.RADIUS;
-    options.vel = this.Util.randomVec(this.VECTOR_LENGTH);
-    MovingObject.call(this, options);
-  }
+  var Asteroids = window.Asteroids = window.Asteroids || {};
 
-  Asteroid.prototype.VECTOR_LENGTH = 5;
 
-  Asteroid.prototype.COLOR = function(){
-    return "#ffffff";
-  };
-  Asteroid.prototype.RADIUS = function(){
-    return 10;
-  };
+  var Asteroid = Asteroids.Asteroid = function(options) {
+    options.color = Asteroid.COLOR;
+    options.radius = Asteroid.RADIUS;
+    options.vel = Asteroids.Util.randomVec(Asteroid.VECTOR_LENGTH);
+    Asteroids.MovingObject.call(this, options);
+    };
+
+  Asteroids.Util.inherits(Asteroids.Asteroid, Asteroids.MovingObject);
+
+  Asteroid.VECTOR_LENGTH = 5;
+  Asteroid.COLOR = "#000000";
+  Asteroid.RADIUS = 10;
 
 })();
