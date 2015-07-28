@@ -82,7 +82,16 @@
     var that = this;
     that.spaceObjects.forEach( function(spaceObject){
       spaceObject.move();
-      spaceObject.pos = that.wrap(spaceObject.pos);
+      if (spaceObject.__proto__ !== Asteroids.Bullet.prototype){
+          spaceObject.pos = that.wrap(spaceObject.pos);
+      } else {
+        if (spaceObject.pos[0] > that.DIM_X || spaceObject.pos[0] < 0){
+          that.remove(spaceObject);
+        }
+        if (spaceObject.pos[1] > that.DIM_Y || spaceObject.pos[1] < 0){
+          that.remove(spaceObject);
+        }
+      }
     });
   };
 
