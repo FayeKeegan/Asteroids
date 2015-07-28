@@ -42,9 +42,6 @@ MovingObject.prototype.isCollidedWith = function(otherObj) {
   }
 };
 
-MovingObject.prototype.collideWith = function(otherObject){
-  this.game.remove(this);
-  this.game.remove(otherObject);
-};
+MovingObject.prototype.collideWith = function(otherObject){ };
 
 })();
